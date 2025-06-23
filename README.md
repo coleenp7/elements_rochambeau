@@ -2,5 +2,6 @@
 Quick game created in Python as part of my boot.dev cirriculumn
 
 Goal:
--Create a five choice game of rochambeau
--Practice python skills
+-Create a five choice game of rochambeau.
+-Practice Python skills.
+-Incorporate visual elements.
