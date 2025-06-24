@@ -1,4 +1,6 @@
 from enum import Enum
+from dataclasses import dataclass
+import pprint
 
 #Enum to define the element choices
 class Element(Enum):
@@ -8,24 +10,33 @@ class Element(Enum):
     AIR = 4
     SPIRIT = 5
 
+@dataclass()
+class Elements:
+    first: Element
+    second: Element
+
 class Player:
     #defines self
     def __init__(self, name):
-        self.name = name
-        self.choice = None
-        self.winner = 0
+        self.__name = name
+        self.__choice = None
+        self.__exists = True
+        self.winner = 3
     
     #sets player choice
     def set_choice(self, var):
-        self.choice = var
+        self.__choice = var
 
     #returns name of player
     def return_name(self):
-        return self.name
+        return self.__name
     
     #returns player choice
     def return_choice(self):
-        return self.choice
+        return self.__choice
+
+    def return_exists(self):
+        return self.__exists
     
     #returns whether the player won or lost
     def return_winner(self, other):
@@ -39,11 +50,15 @@ class Player:
         else:
             return "an error has occurred"
 
-    #win logic, 0 = lose, 1 = win, 2 = tie
+    #win logic, 0 = lose, 1 = win, 2 = tie, 3 = didn't switch
     def choose_winner(self, other):
-        match(self.choice):
+
+        print(f'calculating victory:')
+
+
+        match(self.__choice):
             case Element.EARTH:
-                match(other.choice):
+                match(other.return_choice()):
                     case Element.EARTH:
                         self.winner = 2
                     case Element.FIRE:
@@ -55,7 +70,7 @@ class Player:
                     case Element.SPIRIT:
                         self.winner = 1
             case Element.FIRE:
-                match(other.choice):
+                match(other.return_choice()):
                     case Element.EARTH:
                         self.winner = 0
                     case Element.FIRE:
@@ -67,7 +82,7 @@ class Player:
                     case Element.SPIRIT:
                         self.winner = 1
             case Element.WATER:
-                match(other.choice):
+                match(other.return_choice()):
                     case Element.EARTH:
                         self.winner = 1
                     case Element.FIRE:
@@ -79,7 +94,7 @@ class Player:
                     case Element.SPIRIT:
                         self.winner = 0
             case Element.AIR:
-                match(other.choice):
+                match(other.return_choice()):
                     case Element.EARTH:
                         self.winner = 1
                     case Element.FIRE:
@@ -91,7 +106,7 @@ class Player:
                     case Element.SPIRIT:
                         self.winner = 0
             case Element.SPIRIT:
-                match(other.choice):
+                match(other.return_choice()):
                     case Element.EARTH:
                         self.winner = 0
                     case Element.FIRE:
@@ -102,5 +117,3 @@ class Player:
                         self.winner = 1
                     case Element.SPIRIT:
                         self.winner = 2
-            case _:
-                print("Invalid choice")
