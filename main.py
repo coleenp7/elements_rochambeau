@@ -1,6 +1,7 @@
 from sys import argv, exit
 from classes import *
 from methods import *
+from Element import *
 
 def main():
     #incorrect input handling
@@ -66,30 +67,30 @@ def main():
         p5_choice = input(f"Make your choice {player5.return_name()}: ").upper()
         while not player5.return_choice():
             try:
-                player5.set_choice(Element[p3_choice])
+                player5.set_choice(Element[p5_choice])
             except:
                 p5_choice = input(f"Not a valid choice. Make your choice {player5.return_name()}: ").upper()
 
     print ("\n------------------------------------\n")
     #two player combat
     if number_of_players == 2:
-        print(f"{two_player_combat(player1, player2)})
+        print (two_player_combat(player1, player2))
 
     #three player combat
     elif number_of_players == 3:
-        print (f"{three_player_combat(player1, player2, player3)}")
+        print (three_player_combat(player1, player2, player3))
 
     #four player combat
     elif number_of_players == 4:
-        print (f"{four_player_combat(player1, player2, player3, player4)}")
+        print (four_player_combat(player1, player2, player3, player4))
 
     #five player combat
     elif number_of_players == 5:
-        print(f"{five_player_combat(player1, player2, player3, player4, player5)}")
+        print (five_player_combat(player1, player2, player3, player4, player5))
 
     #error handling
     else:
-        print("Error in combat logic, try again")
+        print ("Error in combat logic, try again")
         exit (1)
     print ("\n------------------------------------\n")
 

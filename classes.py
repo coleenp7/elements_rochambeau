@@ -1,13 +1,5 @@
-from enum import Enum
 from methods import choose_winner
-
-#Enum to define the element choices
-class Element(Enum):
-    EARTH = "earth"
-    FIRE = "fire"
-    WATER = "water"
-    AIR = "air"
-    SPIRIT = "spirit"
+from Element import *
 
 class Player:
     #defines self
@@ -28,6 +20,19 @@ class Player:
     #returns player choice
     def return_choice(self):
         return self.__choice
+    
+    def return_choice_text(self):
+        match(self.return_choice()):
+            case Element.EARTH:
+                return "earth"
+            case Element.WATER:
+                return "water"
+            case Element.AIR:
+                return "air"
+            case Element.FIRE:
+                return "fire"
+            case Element.SPIRIT:
+                return "spirit"
 
     #returns existance
     def return_exists(self):
@@ -41,14 +46,14 @@ class Player:
     def return_winner(player1, player2):
         win_number = choose_winner(player1, player2)
         if win_number == 0:
-            player2.winner == 1
+            player2.winner = 1
             return "lost"
         elif win_number == 1:
-            player1.winner == 1
+            player1.winner = 1
             return "won"
         elif win_number == 2:
-            player2.winner == 2
-            player1.winner == 2
+            player2.winner = 2
+            player1.winner = 2
             return "tied"
         else:
             return "** an error has occurred in return_winner **"
