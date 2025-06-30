@@ -1,6 +1,6 @@
 from sys import argv, exit
 from classes import *
-from methods import *
+from helper_functions import *
 from Element import *
 
 def main():

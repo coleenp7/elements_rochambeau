@@ -1,4 +1,4 @@
-from methods import choose_winner
+from helper_functions import choose_winner
 from Element import *
 
 class Player:

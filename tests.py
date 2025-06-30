@@ -1,6 +1,6 @@
 import unittest
 from classes import *
-from methods import *
+from helper_functions import *
 
 class TestPlay(unittest.TestCase):
     #test logic for underlying logic
@@ -383,7 +383,84 @@ class TestPlay(unittest.TestCase):
         self.assertEqual(two_player_combat(player1, player2), "Aria chose spirit and lost the match against Blake who chose earth.")
 
     #test logic for three player combat
+    def test_three_player_logic_tie(self):
+        player1 = Player("Alexander")
+        player2 = Player("Brooklyn")
+        player3 = Player("Camden")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.EARTH)
+        player3.set_choice(Element.EARTH)
+        self.assertEqual(three_player_combat(player1, player2, player3), "Alexander chose earth and tied the match against Brooklyn who chose earth.\nThere was a tie. No second match.\n")
+
+    def test_three_player_logic_one(self):
+        player1 = Player("Alexander")
+        player2 = Player("Brooklyn")
+        player3 = Player("Camden")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.AIR)
+        player3.set_choice(Element.FIRE)
+        self.assertEqual(three_player_combat(player1, player2, player3), "Alexander chose earth and lost the match against Brooklyn who chose air.\nBrooklyn chose air and lost the match against Camden who chose fire.\n")
+
+    def test_three_player_logic_two(self):
+        player1 = Player("Alexander")
+        player2 = Player("Brooklyn")
+        player3 = Player("Camden")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.WATER)
+        player3.set_choice(Element.SPIRIT)
+        self.assertEqual(three_player_combat(player1, player2, player3), "Alexander chose earth and lost the match against Brooklyn who chose water.\nBrooklyn chose water and lost the match against Camden who chose spirit.\n")
+
+    def test_three_player_logic_three(self):
+        player1 = Player("Alexander")
+        player2 = Player("Brooklyn")
+        player3 = Player("Camden")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.AIR)
+        player3.set_choice(Element.WATER)
+        self.assertEqual(three_player_combat(player1, player2, player3), "Alexander chose earth and lost the match against Brooklyn who chose air.\nBrooklyn chose water and won the match against Camden who chose spirit.\n")
+
+    def test_three_player_logic_four(self):
+        player1 = Player("Alexander")
+        player2 = Player("Brooklyn")
+        player3 = Player("Camden")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.SPIRIT)
+        player3.set_choice(Element.FIRE)
+        self.assertEqual(three_player_combat(player1, player2, player3), "Alexander chose earth and won the match against Brooklyn who chose spirit.\nAlexander chose earth and won the match against Camden who chose fire.\n")
+
+
+    def test_three_player_logic_five(self):
+        player1 = Player("Alexander")
+        player2 = Player("Brooklyn")
+        player3 = Player("Camden")
+        player1.set_choice(Element.AIR)
+        player2.set_choice(Element.WATER)
+        player3.set_choice(Element.SPIRIT)
+        self.assertEqual(three_player_combat(player1, player2, player3), "Alexander chose air and won the match against Brooklyn who chose water.\nAlexander chose air and lost the match against Camden who chose spirit.\n")
 
     #test logic for four player combat
+    def test_four_player_logic_tie(self):
+        player1 = Player("Archer")
+        player2 = Player("Bryce")
+        player3 = Player("Cora")
+        player4 = Player("Daxton")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.EARTH)
+        player3.set_choice(Element.WATER)
+        player4.set_choice(Element.AIR)
+        self.assertEqual(four_player_combat(player1, player2, player3, player4), "Archer chose earth and tied the match against Bryce who chose earth.\nCora chose water and lost the match against Daxton who chose air.\nThere was a tie. No third match.\n")
+
+
+    def test_four_player_logic_one(self):
+    def test_four_player_logic_two(self):
+    def test_four_player_logic_three(self):
+    def test_four_player_logic_four(self):
+    def test_four_player_logic_five(self):
 
     #test logic for five player combat
+    def test_five_player_logic_tie(self):
+    def test_five_player_logic_one(self):
+    def test_five_player_logic_two(self):
+    def test_five_player_logic_three(self):
+    def test_five_player_logic_four(self):
+    def test_five_player_logic_five(self):
