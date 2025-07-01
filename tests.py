@@ -212,175 +212,175 @@ class TestPlay(unittest.TestCase):
         player2 = Player("Blake")
         player1.set_choice(Element.EARTH)
         player2.set_choice(Element.EARTH)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose earth and tied the match against Blake who chose earth.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose earth and tied the match against Blake who chose earth.\n")
     
     def test_two_player_logic_earth_two(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.EARTH)
         player2.set_choice(Element.AIR)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose earth and lost the match against Blake who chose air.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose earth and lost the match against Blake who chose air.\n")
 
     def test_two_player_logic_earth_three(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.EARTH)
         player2.set_choice(Element.SPIRIT)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose earth and won the match against Blake who chose spirit.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose earth and won the match against Blake who chose spirit.\n")
     
     def test_two_player_logic_earth_four(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.EARTH)
         player2.set_choice(Element.WATER)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose earth and lost the match against Blake who chose water.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose earth and lost the match against Blake who chose water.\n")
     
     def test_two_player_logic_earth_five(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.EARTH)
         player2.set_choice(Element.FIRE)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose earth and won the match against Blake who chose fire.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose earth and won the match against Blake who chose fire.\n")
     
     def test_two_player_logic_fire_one(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.FIRE)
         player2.set_choice(Element.AIR)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose fire and won the match against Blake who chose air.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose fire and won the match against Blake who chose air.\n")
     
     def test_two_player_logic_fire_two(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.FIRE)
         player2.set_choice(Element.FIRE)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose fire and tied the match against Blake who chose fire.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose fire and tied the match against Blake who chose fire.\n")
     
     def test_two_player_logic_fire_three(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.FIRE)
         player2.set_choice(Element.WATER)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose fire and lost the match against Blake who chose water.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose fire and lost the match against Blake who chose water.\n")
     
     def test_two_player_logic_fire_four(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.FIRE)
         player2.set_choice(Element.EARTH)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose fire and lost the match against Blake who chose earth.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose fire and lost the match against Blake who chose earth.\n")
     
     def test_two_player_logic_fire_five(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.FIRE)
         player2.set_choice(Element.SPIRIT)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose fire and won the match against Blake who chose spirit.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose fire and won the match against Blake who chose spirit.\n")
     
     def test_two_player_logic_water_one(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.WATER)
         player2.set_choice(Element.EARTH)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose water and won the match against Blake who chose earth.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose water and won the match against Blake who chose earth.\n")
     
     def test_two_player_logic_water_two(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.WATER)
         player2.set_choice(Element.FIRE)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose water and won the match against Blake who chose fire.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose water and won the match against Blake who chose fire.\n")
     
     def test_two_player_logic_water_three(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.WATER)
         player2.set_choice(Element.WATER)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose water and tied the match against Blake who chose water.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose water and tied the match against Blake who chose water.\n")
 
     def test_two_player_logic_water_four(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.WATER)
         player2.set_choice(Element.AIR)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose water and lost the match against Blake who chose air.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose water and lost the match against Blake who chose air.\n")
 
     def test_two_player_logic_water_five(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.WATER)
         player2.set_choice(Element.SPIRIT)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose water and lost the match against Blake who chose spirit.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose water and lost the match against Blake who chose spirit.\n")
     
     def test_two_player_logic_air_one(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.AIR)
         player2.set_choice(Element.EARTH)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose air and won the match against Blake who chose earth.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose air and won the match against Blake who chose earth.\n")
 
     def test_two_player_logic_air_two(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.AIR)
         player2.set_choice(Element.FIRE)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose air and lost the match against Blake who chose fire.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose air and lost the match against Blake who chose fire.\n")
     
     def test_two_player_logic_air_three(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.AIR)
         player2.set_choice(Element.WATER)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose air and won the match against Blake who chose water.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose air and won the match against Blake who chose water.\n")
     
     def test_two_player_logic_air_four(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.AIR)
         player2.set_choice(Element.AIR)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose air and tied the match against Blake who chose air.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose air and tied the match against Blake who chose air.\n")
     
     def test_two_player_logic_air_five(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.AIR)
         player2.set_choice(Element.SPIRIT)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose air and lost the match against Blake who chose spirit.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose air and lost the match against Blake who chose spirit.\n")
 
     def test_two_player_logic_spirit_one(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.SPIRIT)
         player2.set_choice(Element.EARTH)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose spirit and lost the match against Blake who chose earth.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose spirit and lost the match against Blake who chose earth.\n")
 
     def test_two_player_logic_spirit_two(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.SPIRIT)
         player2.set_choice(Element.FIRE)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose spirit and lost the match against Blake who chose fire.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose spirit and lost the match against Blake who chose fire.\n")
 
     def test_two_player_logic_spirit_three(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.SPIRIT)
         player2.set_choice(Element.WATER)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose spirit and won the match against Blake who chose water.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose spirit and won the match against Blake who chose water.\n")
 
     def test_two_player_logic_spirit_four(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.SPIRIT)
         player2.set_choice(Element.AIR)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose spirit and won the match against Blake who chose air.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose spirit and won the match against Blake who chose air.\n")
 
     def test_two_player_logic_spirit_five(self):
         player1 = Player("Aria")
         player2 = Player("Blake")
         player1.set_choice(Element.SPIRIT)
         player2.set_choice(Element.EARTH)
-        self.assertEqual(two_player_combat(player1, player2), "Aria chose spirit and lost the match against Blake who chose earth.")
+        self.assertEqual(two_player_combat(player1, player2), "Aria chose spirit and lost the match against Blake who chose earth.\n")
 
     #test logic for three player combat
     def test_three_player_logic_tie(self):
@@ -417,7 +417,7 @@ class TestPlay(unittest.TestCase):
         player1.set_choice(Element.EARTH)
         player2.set_choice(Element.AIR)
         player3.set_choice(Element.WATER)
-        self.assertEqual(three_player_combat(player1, player2, player3), "Alexander chose earth and lost the match against Brooklyn who chose air.\nBrooklyn chose water and won the match against Camden who chose spirit.\n")
+        self.assertEqual(three_player_combat(player1, player2, player3), "Alexander chose earth and lost the match against Brooklyn who chose air.\nBrooklyn chose air and won the match against Camden who chose water.\n")
 
     def test_three_player_logic_four(self):
         player1 = Player("Alexander")
@@ -439,28 +439,177 @@ class TestPlay(unittest.TestCase):
         self.assertEqual(three_player_combat(player1, player2, player3), "Alexander chose air and won the match against Brooklyn who chose water.\nAlexander chose air and lost the match against Camden who chose spirit.\n")
 
     #test logic for four player combat
-    def test_four_player_logic_tie(self):
+    def test_four_player_logic_tie_one(self):
+        player1 = Player("Archer")
+        player2 = Player("Bryce")
+        player3 = Player("Cora")
+        player4 = Player("Daxton")
+        player1.set_choice(Element.WATER)
+        player2.set_choice(Element.WATER)
+        player3.set_choice(Element.WATER)
+        player4.set_choice(Element.AIR)
+        self.assertEqual(four_player_combat(player1, player2, player3, player4), "Archer chose water and tied the match against Bryce who chose water.\nCora chose water and lost the match against Daxton who chose air.\nThere was a tie. No third match.\n")
+
+    def test_four_player_logic_tie_two(self):
+        player1 = Player("Archer")
+        player2 = Player("Bryce")
+        player3 = Player("Cora")
+        player4 = Player("Daxton")
+        player1.set_choice(Element.WATER)
+        player2.set_choice(Element.AIR)
+        player3.set_choice(Element.EARTH)
+        player4.set_choice(Element.EARTH)
+        self.assertEqual(four_player_combat(player1, player2, player3, player4), "Archer chose water and lost the match against Bryce who chose air.\nCora chose earth and tied the match against Daxton who chose earth.\nThere was a tie. No third match.\n")
+    
+    def test_four_player_logic_tie_three(self):
+        player1 = Player("Archer")
+        player2 = Player("Bryce")
+        player3 = Player("Cora")
+        player4 = Player("Daxton")
+        player1.set_choice(Element.WATER)
+        player2.set_choice(Element.FIRE)
+        player3.set_choice(Element.WATER)
+        player4.set_choice(Element.EARTH)
+        self.assertEqual(four_player_combat(player1, player2, player3, player4), "Archer chose water and won the match against Bryce who chose fire.\nCora chose water and won the match against Daxton who chose earth.\nArcher chose water and tied the match against Cora who chose water.\n")
+    
+    def test_four_player_logic_one(self):
+        player1 = Player("Archer")
+        player2 = Player("Bryce")
+        player3 = Player("Cora")
+        player4 = Player("Daxton")
+        player1.set_choice(Element.WATER)
+        player2.set_choice(Element.AIR)
+        player3.set_choice(Element.FIRE)
+        player4.set_choice(Element.SPIRIT)
+        self.assertEqual(four_player_combat(player1, player2, player3, player4), "Archer chose water and lost the match against Bryce who chose air.\nCora chose fire and won the match against Daxton who chose spirit.\nBryce chose air and lost the match against Cora who chose fire.\n")
+
+    def test_four_player_logic_two(self):
+        player1 = Player("Archer")
+        player2 = Player("Bryce")
+        player3 = Player("Cora")
+        player4 = Player("Daxton")
+        player1.set_choice(Element.FIRE)
+        player2.set_choice(Element.AIR)
+        player3.set_choice(Element.WATER)
+        player4.set_choice(Element.EARTH)
+        self.assertEqual(four_player_combat(player1, player2, player3, player4), "Archer chose fire and won the match against Bryce who chose air.\nCora chose water and won the match against Daxton who chose earth.\nArcher chose fire and lost the match against Cora who chose water.\n")
+
+    def test_four_player_logic_three(self):
+        player1 = Player("Archer")
+        player2 = Player("Bryce")
+        player3 = Player("Cora")
+        player4 = Player("Daxton")
+        player1.set_choice(Element.WATER)
+        player2.set_choice(Element.AIR)
+        player3.set_choice(Element.EARTH)
+        player4.set_choice(Element.SPIRIT)
+        self.assertEqual(four_player_combat(player1, player2, player3, player4), "Archer chose water and lost the match against Bryce who chose air.\nCora chose earth and won the match against Daxton who chose spirit.\nBryce chose air and won the match against Cora who chose earth.\n")
+
+    def test_four_player_logic_four(self):
         player1 = Player("Archer")
         player2 = Player("Bryce")
         player3 = Player("Cora")
         player4 = Player("Daxton")
         player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.FIRE)
+        player3.set_choice(Element.WATER)
+        player4.set_choice(Element.AIR)
+        self.assertEqual(four_player_combat(player1, player2, player3, player4), "Archer chose earth and won the match against Bryce who chose fire.\nCora chose water and lost the match against Daxton who chose air.\nArcher chose earth and lost the match against Daxton who chose air.\n")
+
+    def test_four_player_logic_five(self):
+        player1 = Player("Archer")
+        player2 = Player("Bryce")
+        player3 = Player("Cora")
+        player4 = Player("Daxton")
+        player1.set_choice(Element.WATER)
+        player2.set_choice(Element.AIR)
+        player3.set_choice(Element.FIRE)
+        player4.set_choice(Element.SPIRIT)
+        self.assertEqual(four_player_combat(player1, player2, player3, player4), "Archer chose water and lost the match against Bryce who chose air.\nCora chose fire and won the match against Daxton who chose spirit.\nBryce chose air and lost the match against Cora who chose fire.\n")
+
+    #test logic for five player combat
+    def test_five_player_logic_tie_one(self):
+        player1 = Player("Adam")
+        player2 = Player("Brody")
+        player3 = Player("Clara")
+        player4 = Player("Dallas")
+        player5 = Player("Ezra")
+        player1.set_choice(Element.EARTH)
         player2.set_choice(Element.EARTH)
         player3.set_choice(Element.WATER)
         player4.set_choice(Element.AIR)
-        self.assertEqual(four_player_combat(player1, player2, player3, player4), "Archer chose earth and tied the match against Bryce who chose earth.\nCora chose water and lost the match against Daxton who chose air.\nThere was a tie. No third match.\n")
+        player5.set_choice(Element.FIRE)
+        self.assertEqual(five_player_combat(player1, player2, player3, player4, player5), "Adam chose earth and tied the match against Brody who chose earth.\nClara chose water and lost the match against Dallas who chose air.\nThere was a tie. No third match.\nThere was a tie. No fourth match.\nThere was a tie. No fifth match.\n")
+"""
+    def test_five_player_logic_tie_two(self):
+        player1 = Player("Adam")
+        player2 = Player("Brody")
+        player3 = Player("Clara")
+        player4 = Player("Dallas")
+        player5 = Player("Ezra")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.EARTH)
+        player3.set_choice(Element.WATER)
+        player4.set_choice(Element.AIR)
+        player5.set_choice(Element.FIRE)
 
-
-    def test_four_player_logic_one(self):
-    def test_four_player_logic_two(self):
-    def test_four_player_logic_three(self):
-    def test_four_player_logic_four(self):
-    def test_four_player_logic_five(self):
-
-    #test logic for five player combat
-    def test_five_player_logic_tie(self):
     def test_five_player_logic_one(self):
+        player1 = Player("Adam")
+        player2 = Player("Brody")
+        player3 = Player("Clara")
+        player4 = Player("Dallas")
+        player5 = Player("Ezra")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.EARTH)
+        player3.set_choice(Element.WATER)
+        player4.set_choice(Element.AIR)
+        player5.set_choice(Element.FIRE)
+
     def test_five_player_logic_two(self):
+        player1 = Player("Adam")
+        player2 = Player("Brody")
+        player3 = Player("Clara")
+        player4 = Player("Dallas")
+        player5 = Player("Ezra")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.EARTH)
+        player3.set_choice(Element.WATER)
+        player4.set_choice(Element.AIR)
+        player5.set_choice(Element.FIRE)
+
     def test_five_player_logic_three(self):
+        player1 = Player("Adam")
+        player2 = Player("Brody")
+        player3 = Player("Clara")
+        player4 = Player("Dallas")
+        player5 = Player("Ezra")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.EARTH)
+        player3.set_choice(Element.WATER)
+        player4.set_choice(Element.AIR)
+        player5.set_choice(Element.FIRE)
+
     def test_five_player_logic_four(self):
+        player1 = Player("Adam")
+        player2 = Player("Brody")
+        player3 = Player("Clara")
+        player4 = Player("Dallas")
+        player5 = Player("Ezra")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.EARTH)
+        player3.set_choice(Element.WATER)
+        player4.set_choice(Element.AIR)
+        player5.set_choice(Element.FIRE)
+
     def test_five_player_logic_five(self):
+        player1 = Player("Adam")
+        player2 = Player("Brody")
+        player3 = Player("Clara")
+        player4 = Player("Dallas")
+        player5 = Player("Ezra")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.EARTH)
+        player3.set_choice(Element.WATER)
+        player4.set_choice(Element.AIR)
+        player5.set_choice(Element.FIRE)
+"""

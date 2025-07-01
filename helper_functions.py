@@ -70,6 +70,7 @@ def two_player_combat(player1, player2):
 
 def three_player_combat (player1, player2, player3):
     combat1 = two_player_combat(player1, player2)
+    combat2 = "There was a tie. No second match.\n"
         
     if player1.return_winner_var() == 1:
         combat2 = two_player_combat(player1, player3)
@@ -82,63 +83,84 @@ def three_player_combat (player1, player2, player3):
         return (f"{combat1}{combat2}")
     else:
         print("There was an error in three person combat system.")
+    
+    return (f"{combat1}{combat2}")
 
 def four_player_combat(player1, player2, player3, player4):
-        combat1 = two_player_combat(player1, player2)
-        combat2 = two_player_combat(player3, player4)
-        
-        if player1.return_winner_var() == 1 and player3.return_winner_var() == 1:
-            combat3 = two_player_combat(player1, player3)
-            return (f"{combat1}{combat2}{combat3}")
-        elif player2.return_winner_var() == 1 and player3.return_winner_var() == 1:
-            combat3 = two_player_combat(player2, player3)
-            return (f"{combat1}{combat2}{combat3}")
-        elif player1.return_winner_var() == 1 and player4.return_winner_var() == 1:
-            combat3 = two_player_combat(player1, player4)
-            return (f"{combat1}{combat2}{combat3}")
-        elif player2.return_winner_var() == 1 and player4.return_winner_var() == 1:
-            combat3 = two_player_combat(player2, player4)
-        elif player2.return_winner_var() == 2 or player3.return_winner_var() == 2:
-            combat3 = "There was a tie. No third match.\n"
-            return (f"{combat1}{combat2}{combat3}")
-        else:
-            print("There was an error in the four person combat system.")
+    combat1 = two_player_combat(player1, player2)
+    combat2 = two_player_combat(player3, player4)
+    combat3 = "There was a tie. No third match.\n"
+    
+    if player1.return_winner_var() == 1 and player3.return_winner_var() == 1:
+        combat3 = two_player_combat(player1, player3)
+        return (f"{combat1}{combat2}{combat3}")
+    elif player2.return_winner_var() == 1 and player3.return_winner_var() == 1:
+        combat3 = two_player_combat(player2, player3)
+        return (f"{combat1}{combat2}{combat3}")
+    elif player1.return_winner_var() == 1 and player4.return_winner_var() == 1:
+        combat3 = two_player_combat(player1, player4)
+        return (f"{combat1}{combat2}{combat3}")
+    elif player2.return_winner_var() == 1 and player4.return_winner_var() == 1:
+        combat3 = two_player_combat(player2, player4)
+        return (f"{combat1}{combat2}{combat3}")
+    elif player2.return_winner_var() == 2 or player3.return_winner_var() == 2:
+        combat3 = "There was a tie. No third match.\n"
+        return (f"{combat1}{combat2}{combat3}")
+    else:
+        print("There was an error in the four person combat system.")
+    
+    return (f"{combat1}{combat2}{combat3}")
 
 def five_player_combat(player1, player2, player3, player4, player5):
-        combat1 = two_player_combat(player1, player2)
-        combat2 = two_player_combat(player3, player4)
-        
-        if player1.return_winner_var() == 1:
-            combat3 = two_player_combat(player1, player5)
-        elif player2.return_winner_var() == 1:
-            combat3 = two_player_combat(player2, player5)
+    combat1 = two_player_combat(player1, player2)
+    combat2 = two_player_combat(player3, player4)
+    combat3 = "There was a tie. No third match.\n"
+    combat4 = "There was a tie. No fourth match.\n"
+    combat5 = "There was a tie. No fifth match.\n"
+    
+    if player1.return_winner_var() == 1:
+        combat3 = two_player_combat(player1, player5)
+    elif player2.return_winner_var() == 1:
+        combat3 = two_player_combat(player2, player5)
+    elif player1.return_winner_var() == 2:
+        combat3 = "There was a tie. No third match.\n"
+    else:
+        print("There was an error in the first 5th player match")
+    
+    if player5.return_winner_var() == 1:
+        if player3.return_winner_var() == 1:
+            combat4 = two_player_combat(player3, player5)
+        elif player4.return_winner_var == 1:
+            combat4 = two_player_combat(player4, player5)
+        elif player3.return_winner_var() == 2:
+            combat4 = "There was a tie. No fourth match.\n"
         else:
-            print("There was an error in the first 5th player match")
-        
-        if player5.return_winner_var() == 1:
-            if player3.return_winner_var() == 1:
-                combat4 = two_player_combat(player3, player5)
-            elif player4.return_winner_var == 1:
-                combat4 = two_player_combat(player4, player5)
-            else:
-                print("There was an error in the second 5th player match")
+            print("There was an error in the second 5th player match")
 
-        if player1.return_winner_var() == 1:
-            if player3.return_winner_var() == 1:
-                combat5 = two_player_combat(player1, player3)
-                return (f"{combat1}{combat2}{combat3}{combat4}{combat5}")
-            elif player4.return_winner_var() == 1:
-                combat5 = two_player_combat(player1, player4)
-                return (f"{combat1}{combat2}{combat3}{combat4}{combat5}")
-            else:
-                print("There was an error in player 1 match 3")
-        
-        if player2.return_winner_var() == 1:
-            if player3.return_winner_var() == 1:
-                combat5 = two_player_combat(player2, player3)
-                return (f"{combat1}{combat2}{combat3}{combat4}{combat5}")
-            elif player4.return_winner_var() == 1:
-                combat5 = two_player_combat(player2, player4)
-                return (f"{combat1}{combat2}{combat3}{combat4}{combat5}")
-            else:
-                print("There was an error in player 2 match 3")
+    if player1.return_winner_var() == 1:
+        if player3.return_winner_var() == 1:
+            combat5 = two_player_combat(player1, player3)
+            return (f"{combat1}{combat2}{combat3}{combat4}{combat5}")
+        elif player4.return_winner_var() == 1:
+            combat5 = two_player_combat(player1, player4)
+            return (f"{combat1}{combat2}{combat3}{combat4}{combat5}")
+        elif player3.return_winner_var() == 2:
+            combat5 = "There was a tie. No fifth match.\n"
+            return (f"{combat1}{combat2}{combat3}{combat4}{combat5}")
+        else:
+            print("There was an error in player 1 match 3")
+    
+    if player2.return_winner_var() == 1:
+        if player3.return_winner_var() == 1:
+            combat5 = two_player_combat(player2, player3)
+            return (f"{combat1}{combat2}{combat3}{combat4}{combat5}")
+        elif player4.return_winner_var() == 1:
+            combat5 = two_player_combat(player2, player4)
+            return (f"{combat1}{combat2}{combat3}{combat4}{combat5}")
+        elif player3.return_winner_var() == 2:
+            combat5 = "There was a tie. No fifth match.\n"
+            return (f"{combat1}{combat2}{combat3}{combat4}{combat5}")
+        else:
+            print("There was an error in player 2 match 3")
+
+    return (f"{combat1}{combat2}{combat3}{combat4}{combat5}")
