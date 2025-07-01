@@ -539,8 +539,8 @@ class TestPlay(unittest.TestCase):
         player3.set_choice(Element.WATER)
         player4.set_choice(Element.AIR)
         player5.set_choice(Element.FIRE)
-        self.assertEqual(five_player_combat(player1, player2, player3, player4, player5), "Adam chose earth and tied the match against Brody who chose earth.\nClara chose water and lost the match against Dallas who chose air.\nThere was a tie. No third match.\nThere was a tie. No fourth match.\nThere was a tie. No fifth match.\n")
-"""
+        self.assertEqual(five_player_combat(player1, player2, player3, player4, player5), "Adam chose earth and tied the match against Brody who chose earth.\nClara chose water and lost the match against Dallas who chose air.\nThere was a tie. No third match.\nNo fourth match.\nNo fifth match.\n")
+
     def test_five_player_logic_tie_two(self):
         player1 = Player("Adam")
         player2 = Player("Brody")
@@ -548,10 +548,25 @@ class TestPlay(unittest.TestCase):
         player4 = Player("Dallas")
         player5 = Player("Ezra")
         player1.set_choice(Element.EARTH)
-        player2.set_choice(Element.EARTH)
+        player2.set_choice(Element.FIRE)
         player3.set_choice(Element.WATER)
         player4.set_choice(Element.AIR)
-        player5.set_choice(Element.FIRE)
+        player5.set_choice(Element.EARTH)
+        self.assertEqual(five_player_combat(player1, player2, player3, player4, player5), "Adam chose earth and won the match against Brody who chose fire.\nClara chose water and lost the match against Dallas who chose air.\nAdam chose earth and tied the match against Ezra who chose earth.\nNo fourth match.\nNo fifth match.\n")
+
+    def test_five_player_logic_tie_three(self):
+        player1 = Player("Adam")
+        player2 = Player("Brody")
+        player3 = Player("Clara")
+        player4 = Player("Dallas")
+        player5 = Player("Ezra")
+        player1.set_choice(Element.EARTH)
+        player2.set_choice(Element.FIRE)
+        player3.set_choice(Element.EARTH)
+        player4.set_choice(Element.FIRE)
+        player5.set_choice(Element.SPIRIT)
+        self.assertEqual(five_player_combat(player1, player2, player3, player4, player5), "Adam chose earth and won the match against Brody who chose fire.\nClara chose earth and won the match against Dallas who chose fire.\nAdam chose earth and won the match against Ezra who chose spirit.\nNo fourth match.\nAdam chose earth and tied the match against Clara who chose earth.\n")
+
 
     def test_five_player_logic_one(self):
         player1 = Player("Adam")
@@ -560,56 +575,8 @@ class TestPlay(unittest.TestCase):
         player4 = Player("Dallas")
         player5 = Player("Ezra")
         player1.set_choice(Element.EARTH)
-        player2.set_choice(Element.EARTH)
+        player2.set_choice(Element.SPIRIT)
         player3.set_choice(Element.WATER)
         player4.set_choice(Element.AIR)
         player5.set_choice(Element.FIRE)
-
-    def test_five_player_logic_two(self):
-        player1 = Player("Adam")
-        player2 = Player("Brody")
-        player3 = Player("Clara")
-        player4 = Player("Dallas")
-        player5 = Player("Ezra")
-        player1.set_choice(Element.EARTH)
-        player2.set_choice(Element.EARTH)
-        player3.set_choice(Element.WATER)
-        player4.set_choice(Element.AIR)
-        player5.set_choice(Element.FIRE)
-
-    def test_five_player_logic_three(self):
-        player1 = Player("Adam")
-        player2 = Player("Brody")
-        player3 = Player("Clara")
-        player4 = Player("Dallas")
-        player5 = Player("Ezra")
-        player1.set_choice(Element.EARTH)
-        player2.set_choice(Element.EARTH)
-        player3.set_choice(Element.WATER)
-        player4.set_choice(Element.AIR)
-        player5.set_choice(Element.FIRE)
-
-    def test_five_player_logic_four(self):
-        player1 = Player("Adam")
-        player2 = Player("Brody")
-        player3 = Player("Clara")
-        player4 = Player("Dallas")
-        player5 = Player("Ezra")
-        player1.set_choice(Element.EARTH)
-        player2.set_choice(Element.EARTH)
-        player3.set_choice(Element.WATER)
-        player4.set_choice(Element.AIR)
-        player5.set_choice(Element.FIRE)
-
-    def test_five_player_logic_five(self):
-        player1 = Player("Adam")
-        player2 = Player("Brody")
-        player3 = Player("Clara")
-        player4 = Player("Dallas")
-        player5 = Player("Ezra")
-        player1.set_choice(Element.EARTH)
-        player2.set_choice(Element.EARTH)
-        player3.set_choice(Element.WATER)
-        player4.set_choice(Element.AIR)
-        player5.set_choice(Element.FIRE)
-"""
+        self.assertEqual(five_player_combat(player1, player2, player3, player4, player5), "Adam chose earth and won the match against Brody who chose spirit.\nClara chose water and lost the match against Dallas who chose air.\nAdam chose earth and won the match against Ezra who chose fire.\nNo fourth match.\nAdam chose earth and lost the match against Dallas who chose air.\n")

@@ -114,9 +114,9 @@ def four_player_combat(player1, player2, player3, player4):
 def five_player_combat(player1, player2, player3, player4, player5):
     combat1 = two_player_combat(player1, player2)
     combat2 = two_player_combat(player3, player4)
-    combat3 = "There was a tie. No third match.\n"
-    combat4 = "There was a tie. No fourth match.\n"
-    combat5 = "There was a tie. No fifth match.\n"
+    combat3 = "No third match.\n"
+    combat4 = "No fourth match.\n"
+    combat5 = "No fifth match.\n"
     
     if player1.return_winner_var() == 1:
         combat3 = two_player_combat(player1, player5)
